@@ -15,19 +15,22 @@ Projekt realizowany w ramach kursu **Docker Maestro**.
 ## 🗂 Struktura projektu
 
 ├── Dockerfile # Trójfazowy: development, builder, production
-├── start.sh # Menu CLI – uruchamianie dev, prod, builder, czyszczenie
-├── nginx.conf # Konfiguracja Nginx z nagłówkami bezpieczeństwa
+
+├── start.sh # Menu CLI – skrypt tworzy kontenery dev, prod i build, można też stworzone kontenery usunąć. 
+
+├── nginx.conf # Konfiguracja Nginx
 
 
 ---
 
 ## INSTRUKCJA ##
 
-X Uruchom skrypt menu:
+X Uruchom skrypt X
 
 bash
 ./start.sh
 
+--pojawi się--
 
 1) Uruchom wersję deweloperską (port 3000)
 2) Uruchom wersję produkcyjną (port 8082)
@@ -58,13 +61,14 @@ Adres: http://localhost:8082
 
 ---
 🧪 Builder
-Możesz wejść do niego interaktywnie i podejrzeć pliki:
+Możesz wejść do kontenera builder i podejrzeć pliki:
 
 docker build --target builder -t zegary-builder .
 docker run -it --rm zegary-builder sh
 ---
 
 X - Założenia projektu - X
+
 ✅ Multi-stage build
 ✅ Obraz bazowy nginx:alpine
 ✅ Użytkownik nginx (non-root)
