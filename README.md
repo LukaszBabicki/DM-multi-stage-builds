@@ -1,7 +1,6 @@
-🚀 Multi-stage Docker Build: Aplikacja statyczna + Nginx
+Multi-stage Docker Build: Aplikacja statyczna + Nginx
 
 Projekt realizowany w ramach kursu **Docker Maestro**.  
-Celem jest stworzenie kontenera Dockera zgodnego z najlepszymi praktykami:
 
 - Użycie **multi-stage build** (development, builder, production)
 - **Bezpieczeństwo**: użytkownik non-root (`nginx`)
@@ -20,14 +19,13 @@ Celem jest stworzenie kontenera Dockera zgodnego z najlepszymi praktykami:
 ├── nginx.conf # Konfiguracja Nginx z nagłówkami bezpieczeństwa
 
 
-
 ---
 
-## 🖥 Jak korzystać
+## INSTRUKCJA ##
 
-### 1️⃣ Uruchom skrypt menu:
+X Uruchom skrypt menu:
 
-```bash
+bash
 ./start.sh
 
 
@@ -60,24 +58,25 @@ Adres: http://localhost:8082
 
 ---
 🧪 Builder
-Etap pośredni (np. do rozszerzenia o minifikację lub build JS).
 Możesz wejść do niego interaktywnie i podejrzeć pliki:
 
 docker build --target builder -t zegary-builder .
 docker run -it --rm zegary-builder sh
 ---
 
-🔐 Zastosowane dobre praktyki
+X - Założenia projektu - X
 ✅ Multi-stage build
 ✅ Obraz bazowy nginx:alpine
 ✅ Użytkownik nginx (non-root)
 ✅ Własna konfiguracja Nginx (nginx.conf)
 ✅ Prawidłowe uprawnienia katalogów
-✅ Skrypt CLI do wygodnego zarządzania
+
+dodatkowo dorobiono:
+✅ Skrypt CLI do wygodnego do tworzenia i zarządzania kontenerami
 
 👤 Autor
 Łukasz Babicki
 https://github.com/LukaszBabicki
 
-
+"projekt własny, wykonanie własne, wodotrysków nie spodziewałbym się" XD
 
