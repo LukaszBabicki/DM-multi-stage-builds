@@ -10,14 +10,14 @@ WORKDIR /app
 # Klonowanie repozytorium
 RUN git clone https://github.com/LukaszBabicki/zegary_daty_suchary.git .
 
-# Kopiowanie plików do katalogu serwowanego przez nginx
+# Kopiowanie plików do katalogu nginx
 RUN rm -rf /usr/share/nginx/html/* \
     && cp -r /app/* /usr/share/nginx/html/
 
-# Usunięcie domyślnej konfiguracji i dodanie własnej (jeśli masz)
+# Usunięcie domyślnej konfiguracji i dodanie własnej (tu był problem)
 RUN rm /etc/nginx/conf.d/default.conf || true
 
-# Użyj tej linii, jeśli masz własny nginx.conf (opcjonalnie)
+# Użycie własnej konfiguracji nginx
 COPY nginx.conf /etc/nginx/conf.d/
 
 EXPOSE 80
